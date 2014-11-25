@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">StopWatch</string>
+    <string name="title">Chrusties Stop Watch</string>
+    <string name="textsplitseconds">000</string>
+    <string name="textTimer">00:00:00:</string>
+    <string name="textSaveLap">Save Lap</string>
+    <string name="textSplitResume">Split</string>
+    <string name="textStartStop">Start</string>
+    <string name="textReset">Reset</string>
+    <string name="textSettings">Settings</string>
+    <string name="textAbout">About</string>
+    <string name="title_activity_second_main">Settings</string>
+    <string name="textLaps">Laps</string>
+    <string name="action_settings">Return to Stop Watch</string>
+    <string name="title_activity_third_main">Laps</string>
+    <string name="texttitleLaps">Laps</string>
+    <string name="textWatch">Watch</string>
+    
+</resources>
