@@ -3,6 +3,7 @@ package com.chrusty.StopWatch;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import com.chrusty.StopWatch.R;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ public class FirstMainActivity extends Activity {
     private long updatedTime = 0L;
     private Handler handler = new Handler();;
     
+	@SuppressLint("SimpleDateFormat")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
