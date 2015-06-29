@@ -3,7 +3,7 @@ package com.chrusty.StopWatch;
 import android.app.Application;
 import android.content.Context;
  
-public class ApplicationContextProvider extends Application {
+public class AppContext extends Application {
     /**
      * Keeps a reference of the application context
      */
@@ -12,7 +12,7 @@ public class ApplicationContextProvider extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        sContext = getApplicationContext();
+        AppContext.sContext = getApplicationContext();
     }
     /**
      * Returns the application context
@@ -22,5 +22,4 @@ public class ApplicationContextProvider extends Application {
     public static Context getContext() {
         return sContext;
     }
- 
 }
