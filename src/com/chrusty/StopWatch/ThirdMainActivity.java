@@ -7,11 +7,8 @@ import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -29,8 +26,6 @@ public class ThirdMainActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_third_main);
-	    //String data = controller.getAllData();
-	    //Message.message(this, data);
 	    callList();
 	}
 	public void callList(){
@@ -59,43 +54,10 @@ public class ThirdMainActivity extends ListActivity {
 						    	  remove(valId);
 						      }  
 						}).show();
-					   
 				  }
 			}); 
 		}
 	}
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.third_main, menu);
-		return true;
-	}
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-    	int id = item.getItemId();
-		if (id == R.id.action_watch) {
-			super.onBackPressed();
-		}
-		if (id == R.id.Settings) {
-			Intent intent = new Intent(this, SecondMainActivity.class);
-	        startActivity(intent);
-	        return true;
-		}
-		if (id == R.id.About) {
-			new AlertDialog.Builder(this)
-			.setTitle("About")
-			.setMessage("This is my first android app.\nVersion 1.0.\nWriten By Christian Spicer.")
-			.setNeutralButton("Ok", new DialogInterface.OnClickListener(){
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					
-				}
-				
-			}).show();
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-    }
 	public void remove(String valId) {
 		
 		controller.delete(valId);

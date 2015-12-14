@@ -1,14 +1,9 @@
 package com.chrusty.StopWatch;
 
-import android.app.AlertDialog;
 import android.app.TabActivity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabSpec;
@@ -64,54 +59,9 @@ public class MainActivity extends TabActivity  implements OnTabChangeListener {
 				
 			}
 		});
-		setTabColor(tabHost);
-		
+		setTabColor(tabHost);		
 	}
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-    	super.onOptionsItemSelected(item);
-    		switch(item.getItemId()){
-    		case R.id.About:
-    			AboutMenuItem();
-    			break;
-    		case R.id.Settings:
-    			SettingsMenuItem();
-    			break;
-       		case R.id.Laps:
-    			LapsMenuItem();
-    			break;
-    		default:
-    			super.onOptionsItemSelected(item);
-    	}
-    	return true;
-    }
-	private void LapsMenuItem() {
-		Intent intent = new Intent(this, ThirdMainActivity.class);
-        startActivity(intent);
-	}
-	private void SettingsMenuItem() {
-		Intent intent = new Intent(this, SecondMainActivity.class);
-        startActivity(intent);
-	}
-	private void AboutMenuItem() {
-		new AlertDialog.Builder(this)
-		.setTitle("About")
-		.setMessage("This is my first android app.\nVersion 1.0.\nWriten By Christian Spicer.")
-		.setNeutralButton("Ok", new DialogInterface.OnClickListener(){
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				
-			}
-			
-		}).show();
-	}
-	public void setTabColor(TabHost tabhost) {
+    public void setTabColor(TabHost tabhost) {
 		
 		for(int i=0;i<tabhost.getTabWidget().getChildCount();i++) {
 			TextView tv = (TextView)  tabhost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //unselected
@@ -131,16 +81,4 @@ public class MainActivity extends TabActivity  implements OnTabChangeListener {
      // TODO Auto-generated method stub
      super.onStart();
     }
-     
-    @Override
-    protected void onStop() {
-     // TODO Auto-generated method stub
-     super.onStop();
-    }
-    protected void onPause() {
-        // TODO Auto-generated method stub
-        
-        super.onPause();
-    }
-   
 }
